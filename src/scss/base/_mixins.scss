@@ -1,5 +1,6 @@
 @use 'variables' as v; 
 
+
 /** Media Queries **/
 @mixin telefono {
     @media (min-width: v.$telefono) {
@@ -56,4 +57,23 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top center;
+}
+
+@mixin headingBorder($colorTexto, $colorLinea){
+    font-size: 3.6rem;
+    display: inline-block;
+    margin-top: 5rem;
+    color: $colorTexto;
+    @include tablet { 
+        margin-top: 0;
+    }
+    
+    &::after{
+    content: "";
+    background-color:$colorLinea;
+    height: 1rem;
+    width: 100%;
+    display: block;
+    margin: -1.4rem 0 0 0;
+    }
 }
